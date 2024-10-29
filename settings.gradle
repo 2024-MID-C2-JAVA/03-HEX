@@ -1,1 +1,10 @@
 rootProject.name = 'HexagonalArchitecture'
+
+include ':account-service'
+findProject(':account-service').projectDir = file('./applications/account-service')
+
+include ':model'
+findProject(':model').projectDir = file('./domain/model')
+
+include ':usecase'
+findProject(':usecase').projectDir = file('./domain/usecase')
