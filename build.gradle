@@ -19,8 +19,8 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'mysql:mysql-connector-java:8.0.33' // Agrega el conector de MySQL
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // Agrega este para JPA
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
