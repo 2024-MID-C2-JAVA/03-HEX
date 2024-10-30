@@ -1,7 +1,5 @@
 package co.com.sofka;
 
-import co.com.sofka.exceptions.InsufficientBalanceException;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.LinkedList;
@@ -29,16 +27,12 @@ public class Account {
         return balance;
     }
 
-    public Transaction[] getTransactions() {
-        return transactions.toArray(Transaction[]::new);
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 
-    public void transactAmount(BigDecimal amount) {
-        if (amount.compareTo(BigDecimal.ZERO) < 0 && amount.abs().compareTo(balance) > 0) {
-            throw new InsufficientBalanceException("Insufficient balance in the account to process the transaction");
-        }
-
-        this.balance = balance.add(amount).setScale(2, RoundingMode.HALF_UP);
+    public Transaction[] getTransactions() {
+        return transactions.toArray(Transaction[]::new);
     }
 
     public void addTransaction(Transaction transaction) {
