@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example.banco_hexagonal_yoder'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':model')
+}

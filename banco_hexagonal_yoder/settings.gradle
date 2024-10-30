@@ -1,0 +1,15 @@
+// Nombre del proyecto raíz
+rootProject.name = 'banco_hexagonal_yoder'
+
+// Incluyo y configuro la ubicación de cada submódulo
+
+include ':app_service', ':model', ':use_cases', ':mongo_repository', ':web', ':ports'
+
+
+findProject(':app_service').projectDir = file('applications/app_service')
+findProject(':model').projectDir = file('domain/model')
+findProject(':use_cases').projectDir = file('domain/usecases')
+findProject(':mongo_repository').projectDir = file('infrastructure/driven_adapters/mongo_repository')
+findProject(':web').projectDir = file('infrastructure/entry_points/web')
+
+findProject(':ports').projectDir = file('domain/ports')
