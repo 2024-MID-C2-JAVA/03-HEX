@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example.banco_hexagonal_yoder'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+dependencies {
+    implementation project(':model')
+    implementation project(':ports')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    testImplementation 'org.mockito:mockito-core:5.5.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.5.0'
+
+}
+
+repositories {
+    mavenCentral()
+}

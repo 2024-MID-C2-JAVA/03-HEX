@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example.banco_hexagonal_yoder'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':ports') // Dependencia a ports para AccountRepository
+    implementation project(':model') // Dependencia a model para Account
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:3.3.5'
+
+    // Dependencias de prueba con versión especificada
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.3.5'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb:3.3.5'
+}
+
