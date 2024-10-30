@@ -8,3 +8,9 @@ findProject(':model').projectDir = file('./domain/model')
 
 include ':usecase'
 findProject(':usecase').projectDir = file('./domain/usecase')
+
+include ':inmemory-repository'
+findProject(':inmemory-repository').projectDir = file('./infrastructure/driven-adapters/inmemory-repository')
+
+include ':web'
+findProject(':web').projectDir = file('./infrastructure/driving-adapters/web')

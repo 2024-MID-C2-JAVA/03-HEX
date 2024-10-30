@@ -3,19 +3,9 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.6'
 }
 
-group = 'co.com.sofka'
-version = '0.0.1-SNAPSHOT'
-
 dependencies {
-    implementation project(':model')
     implementation project(':usecase')
-    implementation project(':inmemory-repository')
-    implementation project(':web')
+
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
 }
