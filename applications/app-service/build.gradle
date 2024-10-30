@@ -1,7 +1,7 @@
 dependencies {
-    implementation project(':use-cases')
-    implementation project(':postgres-repository')
+    implementation project(':usescases')
     implementation project(':web')
+    implementation project(':mysql-repository')
 
     implementation('org.springframework.boot:spring-boot-starter')
     implementation('org.springframework.boot:spring-boot-starter-web')
