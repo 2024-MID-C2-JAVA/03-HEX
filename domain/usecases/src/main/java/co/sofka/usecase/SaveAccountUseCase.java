@@ -1,17 +1,27 @@
 package co.sofka.usecase;
 
+
+
 import co.sofka.Account;
-import co.sofka.gateway.AccountRepository;
+import co.sofka.gateway.IAccountRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class SaveAccountUseCase {
+public class SaveAccountUseCase implements ISaveAccountService {
 
-    private final AccountRepository repository;
+    private static final Logger logger = LoggerFactory.getLogger(SaveAccountUseCase.class);
 
-    public SaveAccountUseCase(AccountRepository accountRepository) {
-        this.repository = accountRepository;
+    private final IAccountRepository repository;
+
+    public SaveAccountUseCase(IAccountRepository repository) {
+        this.repository = repository;
     }
 
-    public Account apply(Account account) {
-        return repository.save(account);
+
+    public Account save(Account transaction) {
+
+        return repository.save(transaction);
     }
+
+
 }
