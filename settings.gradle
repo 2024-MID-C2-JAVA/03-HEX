@@ -1,14 +1,16 @@
-rootProject.name = 'ArquitecturaHexagonal'
+rootProject.name = 'HexagonalArchitecture'
 
-include ':app-service'
+include ':account-service'
+findProject(':account-service').projectDir = file('./applications/account-service')
+
 include ':model'
-include ':use-cases'
-include ':postgres-repository'
-include ':web'
-
-findProject(':app-service').projectDir = file('./applications/app-service')
 findProject(':model').projectDir = file('./domain/model')
-findProject(':use-cases').projectDir = file('./domain/usecases')
-findProject(':postgres-repository').projectDir = file('./infrastructure/driven-adapters/postgres-repository')
-findProject(':web').projectDir = file('./infrastructure/entry-points/web')
 
+include ':usecase'
+findProject(':usecase').projectDir = file('./domain/usecase')
+
+include ':inmemory-repository'
+findProject(':inmemory-repository').projectDir = file('./infrastructure/driven-adapters/inmemory-repository')
+
+include ':web'
+findProject(':web').projectDir = file('./infrastructure/driving-adapters/web')
